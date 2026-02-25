@@ -1,0 +1,44 @@
+<mvc:View controllerName="rgo.purch.controller.View2" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+    <Page id="_IDGenPage" title="Line Item Analytics" showNavButton="true" navButtonPress=".onNavBack">
+        <headerContent>
+            <Button id="_IDGenButton2" icon="sap-icon://action-settings" press="onTableSettings" />
+        </headerContent>
+        <ObjectHeader id="_IDGenObjectHeader" responsive="true" fullScreenOptimized="true" title="{Ebeln}" number="{Bukrs}" numberUnit="CC">
+            <attributes>
+                <ObjectAttribute id="_IDGenObjectAttribute" title="Vendor ID" text="{Lifnr}" />
+            </attributes>
+            <statuses>
+                <ObjectStatus id="_IDGenObjectStatus" text="Approved" state="Success" />
+            </statuses>
+        </ObjectHeader>
+        <Table id="lineItemTable" items="{ZPO_ITEMSSet}" sticky="HeaderToolbar,ColumnHeaders">
+            <headerToolbar>
+                <OverflowToolbar id="_IDGenOverflowToolbar1">
+                    <Title id="_IDGenTitle2" text="Items ({= ${ZPO_ITEMSSet}.length })" level="H3" />
+                    <ToolbarSpacer id="_IDGenToolbarSpacer" />
+                    <Button id="_IDGenButton3" icon="sap-icon://sort" press="onSort" />
+                </OverflowToolbar>
+            </headerToolbar>
+            <columns>
+                <Column id="colItem"><Text id="_IDGenText2" text="Item" /></Column>
+                <Column id="colMat"><Text id="_IDGenText3" text="Material" /></Column>
+                <Column id="colQty" hAlign="End"><Text id="_IDGenText4" text="Qty" /></Column>
+                <Column id="colPrice" hAlign="End"><Text id="_IDGenText5" text="Price" /></Column>
+            </columns>
+            <items>
+                <ColumnListItem id="_IDGenColumnListItem">
+                    <cells>
+                        <ObjectIdentifier id="_IDGenObjectIdentifier" title="{Ebelp}" />
+                        <Text id="_IDGenText6" text="{Matnr}" />
+                        <StepInput 
+                            id="_IDGenStepInput" 
+                            value="{path: 'Menge', type: 'sap.ui.model.type.Float'}" 
+                            displayValuePrecision="2" 
+                            editable="false" />
+                        <ObjectNumber id="_IDGenObjectNumber" number="{Netpr}" unit="{Waers}" state="Information" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+</mvc:View>

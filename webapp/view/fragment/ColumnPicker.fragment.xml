@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <TableSelectDialog id="_IDGenTableSelectDialog1"
+        title="Select Columns to Display"
+        noDataText="No Columns Found"
+        multiSelect="true"
+        search=".onColumnSearch"
+        confirm=".onConfirmColumnSelection"
+        items="{settings>/allColumns}">
+        <ColumnListItem id="_IDGenColumnListItem1">
+            <cells>
+                <Text id="_IDGenText7" text="{settings>label}" />
+            </cells>
+        </ColumnListItem>
+    </TableSelectDialog>
+</core:FragmentDefinition>

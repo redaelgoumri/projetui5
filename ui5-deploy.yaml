@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "4.0"
+metadata:
+  name: project2
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: F4C-910
+          url: http://dlwr-trac-p2.dcsc.be:8000
+          client: '910'
+        app:
+          name: ZRGO_PURCH
+          description: purchase orders
+          package: $TMP
+          transport: ''
+        exclude:
+          - /test/

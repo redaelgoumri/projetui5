@@ -1,0 +1,45 @@
+<mvc:View controllerName="rgo.purch.controller.View1" 
+    xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.f" xmlns:card="sap.f.cards" xmlns:grid="sap.ui.layout.cssgrid">
+    <Page id="_IDGenPage1" title="Purchasing Command Center" titleAlignment="Center">
+        <headerContent>
+            <Button id="_IDGenButton1" icon="sap-icon://settings" press="onOpenColumnSettings" tooltip="Column Settings" />
+        </headerContent>
+        <subHeader>
+            <OverflowToolbar id="_IDGenOverflowToolbar">
+            <SearchField 
+                id="searchField" 
+                width="100%" 
+                placeholder="Search PO, Vendor..." 
+                liveChange=".onSearch" />
+            </OverflowToolbar>
+        </subHeader>
+        <content>
+            <f:GridList id="idHeaderGrid" items="{/PO_HEADERSet}" growing="true">
+                <f:customLayout>
+                    <grid:GridBasicLayout id="_IDGenGridBasicLayout" gridTemplateColumns="repeat(auto-fill, minmax(20rem, 1fr))" gridGap="1.5rem" />
+                </f:customLayout>
+                <f:GridListItem id="_IDGenGridListItem" type="Navigation" press=".onHeaderSelect">
+                    <f:Card id="_IDGenCard" class="sapUiTinyMargin cardHoverEffect">
+                        <f:header>
+                            <card:Header id="_IDGenHeader" title="{Ebeln}" subtitle="Purchase Order" iconSrc="sap-icon://cart-4" statusText="{path: 'Bedat', type: 'sap.ui.model.type.Date'}" />
+                        </f:header>
+                        <f:content>
+                            <VBox id="_IDGenVBox" class="sapUiSmallMargin">
+                                <HBox id="_IDGenHBox" justifyContent="SpaceBetween">
+                                    <VBox id="_IDGenVBox1">
+                                        <Text id="_IDGenText" text="Vendor" class="sapUiTinyMarginBottom" />
+                                        <Title id="_IDGenTitle" text="{Lifnr}" level="H4" />
+                                    </VBox>
+                                    <VBox id="_IDGenVBox2" alignItems="End">
+                                        <Text id="_IDGenText1" text="Company" class="sapUiTinyMarginBottom" />
+                                        <Title id="_IDGenTitle1" text="{Bukrs}" level="H4" />
+                                    </VBox>
+                                </HBox>
+                            </VBox>
+                        </f:content>
+                    </f:Card>
+                </f:GridListItem>
+            </f:GridList>
+        </content>
+    </Page>
+</mvc:View>

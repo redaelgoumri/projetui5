@@ -1,0 +1,132 @@
+{
+  "_version": "1.60.0",
+  "sap.app": {
+    "id": "rgo.purch",
+    "type": "application",
+    "crossNavigation": {
+        "inbounds": {
+            "intent1": {
+                "semanticObject": "PurchaseOrder",
+                "action": "manage",
+                "title": "Purchase Orders <RGO>",
+                "subTitle": "{{appSubTitle}}",
+                "icon": "sap-icon://cart-4"
+            }
+        }
+    },
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.20.3",
+      "toolsId": "b2be3472-1379-4311-a9c4-f0f6bccf4e55"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZPROJET_POITEMSHEADER_RGO_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.120.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "rgo.purch.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "viewType": "XML",
+        "viewPath": "rgo.purch.view",
+        "async": true
+      },
+      "routes": [
+        {
+          "name": "RouteView1",
+          "pattern": "",
+          "target": ["TargetView1"]
+        },
+        {
+          "name": "RouteView2",
+          "pattern": "View2/{poId}",
+          "target": ["TargetView2"]
+        }
+      ],
+      "targets": {
+        "TargetView1": {
+          "viewId": "View1",
+          "viewName": "View1",
+          "viewLevel": 1
+        },
+        "TargetView2": {
+          "viewId": "View2",
+          "viewName": "View2",
+          "viewLevel": 2
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "rgo.purch.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}
