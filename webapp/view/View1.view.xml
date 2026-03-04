@@ -9,7 +9,7 @@
             <SearchField 
                 id="searchField" 
                 width="100%" 
-                placeholder="Search PO, Vendor..." 
+                placeholder="Search Anything..." 
                 liveChange=".onSearch" />
             </OverflowToolbar>
         </subHeader>

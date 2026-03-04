@@ -1,5 +1,5 @@
 {
-  "_version": "1.6.0",
+  "_version": "1.50.0",
   "sap.app": {
     "id": "rgo.purch",
     "type": "application",
@@ -18,7 +18,7 @@
     "applicationVersion": {
       "version": "0.0.1"
     },
-    "title": "{{appTitle}}",
+    "title": "Purchase Orders",
     "description": "{{appDescription}}",
     "resources": "resources.json",
     "sourceTemplate": {
